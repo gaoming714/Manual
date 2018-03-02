@@ -30,6 +30,8 @@ freerdp2-x11
 git
 nodejs
 npm
+nginx
+testdist
 
 ### zsh and 'oh my zsh'
 
