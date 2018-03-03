@@ -32,6 +32,7 @@ nodejs
 npm
 nginx
 testdist
+tree
 
 ### zsh and 'oh my zsh'
 
