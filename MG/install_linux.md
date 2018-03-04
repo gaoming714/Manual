@@ -33,6 +33,7 @@ npm
 nginx
 testdist
 tree
+cmatrix
 
 ### zsh and 'oh my zsh'
 
