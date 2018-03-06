@@ -1,17 +1,30 @@
-ubuntu install 
+opensuse install 
 ======
 
 ------
 
-### update source
+### edit Repositories and Control
 
-useing aliyun
+add Packman Repository
+edit boot loader time => 0
+language
+network for name
+
+tweak for ctrl 
+
+
+### edit editor
+
+
+
 
 
 ### install disk
 
 ls -al /dev/disk/by-uuid
 vi /etc/fstab
+
+
 
 ### remove error report
 
