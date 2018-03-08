@@ -26,7 +26,7 @@ E36B85CC 84991F19 7575D828 470A92AB
 The console is accessed via the ctrl+` shortcut or the View > Show Console menu.
 
 ```
-import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) 
+import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 ```
 
 
@@ -34,22 +34,26 @@ import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe0
 
 Material-Theme
 Markdown Preview
+Emmet
+jsForamt
+TrailingSpaces
 
 ### 配置文件
 
 {
-  "ignored_packages":
-  [
-  ],
-  "font_face": "Source Code Pro Semibold",
-  "font_size": 14,
-  "tab_size": 4,
-  "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-  "theme": "Material-Theme.sublime-theme",
-  "word_wrap": "true",
-  "translate_tabs_on_save":true,
-
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    "font_face": "Source Code Pro Semibold",
+    "font_size": 11,
+    "ignored_packages":
+    [
+    ],
+    "overlay_scroll_bars": "enabled",
+    "tab_size": 4,
+    "theme": "Material-Theme.sublime-theme",
+    "translate_tabs_on_save": true,
+    "word_wrap": "true"
 }
+
 
 
 

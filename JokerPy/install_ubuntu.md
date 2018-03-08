@@ -51,6 +51,9 @@ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
 shutdown -r now
 
+config .zshrc
+export PATH=/home/gaoming/bin:$PATH
+
 ### others
 
 gitKraken
