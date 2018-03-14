@@ -29,12 +29,16 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'godlygeek/tabular'
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-surround'
+Plugin 'godlygeek/tabular'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 
 
 
@@ -53,8 +57,14 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-set laststatus=2
+" set laststatus=2
 set t_Co=256
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set smartindent
+
 
 ```
 
@@ -62,5 +72,5 @@ set t_Co=256
 
 
 open vi ,then run Vundle
-> BundleInstall
+> PluginInstall
 
