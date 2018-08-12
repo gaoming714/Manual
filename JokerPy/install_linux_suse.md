@@ -5,7 +5,14 @@ opensuse install
 
 ### edit Repositories and Control
 
-add Packman Repository
+add Repository
+
+zypper addrepo -f https://mirrors.aliyun.com/opensuse/distribution/leap/15.0/repo/oss/ openSUSE-Oss
+zypper addrepo -f https://mirrors.aliyun.com/opensuse/distribution/leap/15.0/repo/non-oss/ openSUSE-Non-Oss
+zypper addrepo -f https://mirrors.aliyun.com/opensuse/update/leap/15.0/oss/ openSUSE-Update-Oss
+zypper addrepo -f https://mirrors.aliyun.com/opensuse/update/leap/15.0/non-oss/ openSUSE-Update-Non-Oss
+zypper addrepo -f https://mirrors.aliyun.com/packman/openSUSE_Leap_15.0/ Packman
+
 edit boot loader time => 0
 language
 network for name
@@ -24,12 +31,6 @@ tweak for ctrl
 ls -al /dev/disk/by-uuid
 vi /etc/fstab
 
-
-
-### remove error report
-
-vi /etc/default/apport
-enabled=0
 
 
 ### softwares
@@ -56,23 +57,18 @@ $ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/insta
 restart
 
 Manual
+```
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh.git
 cp ~/.zshrc ~/.zshrc.orig
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
 shutdown -r now
+```
 
 ### others
 
 gitKraken
 need  gconf2
-   
-
-### .bashrc 
-
-PATH=$PATH:/home/gaoming/bin/
-alias apt='aptitude'
-
 
 
 ### fonts
