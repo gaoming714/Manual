@@ -1,44 +1,45 @@
-Mysql
+MySQL
 ===
 
-
----
-
-###configure message:
-
-	which mysql
-/usr/bin/mysql
-
-	/usr/bin/mysql --verbose --help | grep -A 1 'Default options'
-```
-Default options are read from the following files in the given order:
-/etc/mysql/my.cnf /etc/my.cnf ~/.my.cnf
-```
-这个信息的意思是：
-服务器首先读取的是/etc/mysql/my.cnf文件，如果前一个文件不存在则继续读/etc/my.cnf文件，如若还不存在便会去读~/.my.cnf文件
-~
+## system config bind-address, remove following.
+/etc/mysql/mysql.conf.d/mysqld.cnf
+bind-address      = 127.0.0.1
 
 
-###privileges
+## CREATE USER
 
-default user / password is root / ''
+CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'password';
 
-login in localhost
-use mysql
-configure
-flush privileges, it makes it work.
+CREATE USER 'jeffrey'@'%' IDENTIFIED BY '';
 
-	mysql -u root
-	use mysql
-	select host, user from user;
-	update user set host = '%' where host='localhost' and user = 'root';
-	update user set password = password('yourpasswd') where host='%' and user = 'root';
-	flush privileges;
+## SHOW USER
 
+USE mysql;
+SELECT host,user FROM user;
+
+## DROP USER
+
+DROP USER 'jeffrey'@'localhost';
 
 
-if there is another localhost, you will login anywhere except localhost.
-so rename the localhost.
+## CREATE GRANTS
 
-	update user set host = 'localhost-disable' where host='localhost' user='';
+CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL ON db1.table1 TO 'jeffrey'@'localhost';
+
+## SHOW GRANTS
+
+SHOW GRANTS FOR 'jeffrey'@'localhost';
+
+## REVOKE
+
+REVOKE ALL ON *.* FROM 'jeffrey'@'localhost';
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'jeffrey'@'localhost';
+
+REVOKE ALL ON *.* FROM 'lambda'@'%';
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'jeffrey'@'localhost';
+
+## flush privileges
+
+flush privileges;
 

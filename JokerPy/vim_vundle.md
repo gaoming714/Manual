@@ -33,6 +33,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'ervandew/supertab'
@@ -69,6 +70,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smartindent
+set backspace=indent,eol,start
 
 " autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
