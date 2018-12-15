@@ -175,6 +175,12 @@ Documentation=https://example.com/path/to/your/docs
 WantedBy=multi-user.target
 
 
+=> /path/to/applicationroot/gunicorn.ini
+import multiprocessing
+pid = "/path/to/applicationroot/pic"
+bind = "unix:/path/to/applicationroot/socket"
+workers = multiprocessing.cpu_count() * 2 + 1
+
 ----
 command systemd
 
