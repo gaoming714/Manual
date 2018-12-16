@@ -90,8 +90,6 @@ WantedBy=sockets.target
 [Unit]
 Description=gunicorn daemon
 After=network.target
-PartOf=gunicorn.target
-ReloadPropagetedFrom=gunicorn.target
 
 [Service]
 ListenStream=/path/to/applicationroot/socket
@@ -115,8 +113,6 @@ WantedBy=multi-user.target
 [Unit]
 Description=gunicorn daemon
 After=network.target
-PartOf=gunicorn.target
-ReloadPropagetedFrom=gunicorn.target
 
 [Service]
 ListenStream=/path/to/applicationroot/socket
@@ -140,7 +136,7 @@ workers = multiprocessing.cpu_count() * 2 + 1
 
 
 
-2.4 gunicorn Mutiweb App type I
+2.4 gunicorn Mutiweb App type I  (not work)
 ---
 (nginx has seperate port or socket)
 
