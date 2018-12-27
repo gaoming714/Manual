@@ -63,8 +63,6 @@ Install packages
 pacman -Syu
 
 git
-python3
-python-pip
 oh-my-zsh
 
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -72,8 +70,12 @@ oh-my-zsh
 
 ---
 
-configure VIM
+configure ENV
 ---
+
+VIM
+node
+conda3(python3)
 
 **add-on**
 
