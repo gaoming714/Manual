@@ -71,6 +71,7 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 set backspace=indent,eol,start
+set cursorline
 
 " autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
