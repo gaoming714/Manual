@@ -11,6 +11,11 @@ on Linux
 ###add user name git, it is only used when needing RSA
 Here I just used this user as a folder
 /home/git/
+useradd -d /home/git git
+passwd git
+> git:x:1000:1000::/home/git:/usr/bin/git-shell
+
+
 
 ---
 

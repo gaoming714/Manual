@@ -25,13 +25,22 @@ configure /etc/profile.d/lang.sh
     test -z "${LC_ALL:-${LC_CTYPE:-$LANG}}" && export LANG=""
 
 ---
+configure auto-update
+---
+
+configure .zshrc
+    DISABLE_AUTO_UPDATE="true"
+
+upgrade_oh_my_zsh
+
+---
 
 Install packages
 ---
 
 pacman -S vim       (ln -s /bin/vim.exe /bin/vi)
 pacman -S zsh
-pacman -Syu
+pacman -Syu         (disabled)
 
 ---
 configure PATH
@@ -84,9 +93,11 @@ CursorType=block
 Font=Source Code Pro Semibold
 FontHeight=12
 FontWeight=600
+
 ForegroundColour=131, 148, 150
 BackgroundColour=  0,  43,  54
-CursorColour=    238, 232, 213
+CursorColour=    220,  50,  47
+
 Black=             7,  54,  66
 BoldBlack=         0,  43,  54
 Red=             220,  50,  47
@@ -137,8 +148,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'iamcco/mathjax-support-for-mkdp'
-Plugin 'iamcco/markdown-preview.vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
@@ -146,8 +155,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'airblade/vim-gitgutter'
-" Plugin 'raimondi/delimitmate'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'yggdroot/indentline'
 
 
 " All of your Plugins must be added before the following line
@@ -173,6 +182,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smartindent
+set cursorline
 set backspace=indent,eol,start
 
 " autocmd vimenter * NERDTree
