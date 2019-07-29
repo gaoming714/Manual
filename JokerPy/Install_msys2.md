@@ -17,29 +17,13 @@ Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch
 
 ---
 
-configure LANG
----
-
-configure /etc/profile.d/lang.sh
-
-    test -z "${LC_ALL:-${LC_CTYPE:-$LANG}}" && export LANG=""
-
----
-configure auto-update
----
-
-configure .zshrc
-    DISABLE_AUTO_UPDATE="true"
-
-upgrade_oh_my_zsh
-
----
 
 Install packages
 ---
 
 pacman -S vim       (ln -s /bin/vim.exe /bin/vi)
 pacman -S zsh
+pacman -S p7zip
 pacman -Syu         (disabled)
 
 ---
@@ -64,6 +48,23 @@ configure nsswitch.conf
     # End /etc/nsswitch.conf
 
 reboot
+
+
+configure LANG
+---
+
+configure /etc/profile.d/lang.sh
+
+    test -z "${LC_ALL:-${LC_CTYPE:-$LANG}}" && export LANG=""
+
+---
+configure auto-update
+---
+
+configure .zshrc
+    DISABLE_AUTO_UPDATE="true"
+
+upgrade_oh_my_zsh
 
 ---
 
@@ -96,7 +97,7 @@ FontWeight=600
 
 ForegroundColour=131, 148, 150
 BackgroundColour=  0,  43,  54
-CursorColour=    220,  50,  47
+CursorColour=    238, 232, 213
 
 Black=             7,  54,  66
 BoldBlack=         0,  43,  54
