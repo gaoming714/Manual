@@ -95,26 +95,9 @@ Font=Source Code Pro Semibold
 FontHeight=12
 FontWeight=600
 
-ForegroundColour=131, 148, 150
+ForegroundColour=101, 123, 131
 BackgroundColour=  0,  43,  54
-CursorColour=    238, 232, 213
-
-Black=             7,  54,  66
-BoldBlack=         0,  43,  54
-Red=             220,  50,  47
-BoldRed=         203,  75,  22
-Green=           133, 153,   0
-BoldGreen=        88, 110, 117
-Yellow=          181, 137,   0
-BoldYellow=      101, 123, 131
-Blue=             38, 139, 210
-BoldBlue=        131, 148, 150
-Magenta=         211,  54, 130
-BoldMagenta=     108, 113, 196
-Cyan=             42, 161, 152
-BoldCyan=        147, 161, 161
-White=           238, 232, 213
-BoldWhite=       253, 246, 227
+CursorColour=     65, 255,  65
 
 ---
 configure Vim
@@ -144,7 +127,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim'
+Plugin 'morhetz/gruvbox'
+" Plugin 'altercation/vim-colors-solarized'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -175,9 +160,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+
 " Basic setting
 set nu
-set t_Co=256
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -186,15 +171,25 @@ set smartindent
 set cursorline
 set backspace=indent,eol,start
 
+" setting for vim-colors-solarized
+set t_Co=256
+syntax enable
+set background=dark
+colorscheme gruvbox
+" let g:solarized_termcolors=256
+" colorscheme solarized
+
+" settings for airline
+" let g:airline_theme="luna"
+" let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+
 " autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" setting for vim-colors-solarized
-syntax enable
-colorscheme solarized
-set background=dark
-
 " let g:user_emmet_expandabbr_key = '<Tab>'
+
 
 ```
 
