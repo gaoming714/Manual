@@ -94,10 +94,11 @@ CursorType=block
 Font=Source Code Pro Semibold
 FontHeight=12
 FontWeight=600
+Scrollbar=none
 
-ForegroundColour=235, 219, 178
-BackgroundColour=  0,  43,  54
-CursorColour=     65, 255,  65
+ForegroundColour=235,219,178
+BackgroundColour=0,40,40
+CursorColour=65,255,65
 
 ---
 configure Vim
