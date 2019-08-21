@@ -95,7 +95,7 @@ Font=Source Code Pro Semibold
 FontHeight=12
 FontWeight=600
 
-ForegroundColour=101, 123, 131
+ForegroundColour=235, 219, 178
 BackgroundColour=  0,  43,  54
 CursorColour=     65, 255,  65
 
