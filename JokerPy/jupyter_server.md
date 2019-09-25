@@ -13,15 +13,31 @@ jupyter notebook --generate-config
 create password to ~/.jupyter/jupyter_notebook_config.json
 jupyter notebook password
 
+## edit config.py
 edit ~/.jupyter/jupyter_notebook_config.py
-e.g. 
-# Set ip to '\*' to bind on all interfaces (ips) for the public server
-c.NotebookApp.ip = '127.0.0.1'
-c.NotebookApp.open_browser = False 
-# with hostnames configured in local_hostnames.
+e.g.
+### Local IP addresses (such as 127.0.0.1 and ::1) are allowed as local, along 
+### with hostnames configured in local_hostnames.
 c.NotebookApp.allow_remote_access = True 
-# It is a good idea to set a known, fixed port for server access
+## The IP address the notebook server will listen on.
+c.NotebookApp.ip = '127.0.0.1'
+### The directory to use for notebooks and kernels.
+c.NotebookApp.notebook_dir = '/home/gaoming/bin'
+### Set ip to '\*' to bind on all interfaces (ips) for the public server
+c.NotebookApp.open_browser = False 
+### It is a good idea to set a known, fixed port for server access
 c.NotebookApp.port = 3888
+
+```py
+c.NotebookApp.allow_remote_access = True
+c.NotebookApp.ip = '127.0.0.1'
+c.NotebookApp.notebook_dir = '/home/gaoming/bin'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 3888
+```
+
+## command to run
+jupyter notebook --no-browser --port=3888 --ip=0.0.0.0
 
 # nginx
 
@@ -74,3 +90,28 @@ jupyter notebook
 
 # open web
 http://host:8888/
+
+
+# daemon with pm2
+## create daemon.sh
+    /home/gaoming/Python/bin/jupyter notebook
+## or script.config.js
+module.exports = {
+  apps : [{
+    name: "jupyter",
+    script: "/home/gaoming/Python/bin/jupyter",
+    args: "notebook",
+    interpreter: "/home/gaoming/Python/bin/python"
+  }]
+}
+
+## pm2 start & save 
+    pm2 start daemon.sh
+    pm2 save
+## enable systemctl
+    su root
+    pm2 startup
+## edit /etc/systemctl/system/pm2-root
+    user = gaoming
+    /root > /home/gaoming
+
