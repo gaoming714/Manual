@@ -1,23 +1,23 @@
-vim install vundle
-======
+# vim
 
-------
+> 
 
+---
 
+make git_folder to folder 
 
-clone git folder to folder 
-> mkdir ~/.vim/bundle/
-
-git files
-> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-
-copy .vimrc to home or write
-copy
-> cp vimrc .vimrc
-
-write
+```shell
+mkdir -p ~/.vim/bundle/
 ```
+git clone files
+
+```shell
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+copy .vimrc to /home
+
+```vimrc
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -29,21 +29,22 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+" theme
 Plugin 'morhetz/gruvbox'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" beauty
+Plugin 'scrooloose/nerdtree'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'yggdroot/indentline'
+" edit
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'yggdroot/indentline'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,41 +61,59 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
-" Basic setting
+" Basic settings
 set nu
 set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set shiftround
 set smartindent
 set cursorline
+set numberwidth=5
 set backspace=indent,eol,start
 
-" setting for vim-colors-solarized
+" Theme
 set t_Co=256
-syntax enable
 set background=dark
+syntax enable
 colorscheme gruvbox
 " let g:solarized_termcolors=256
 " colorscheme solarized
 
-" settings for airline
-" let g:airline_theme="luna"
-" let g:airline_powerline_fonts = 1
+" airline
+let g:airline_theme="luna"
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#filetypes = 0
 
-
-" autocmd vimenter * NERDTree
+" Map
+let g:user_emmet_leader_key='<C-Y>'
 map <C-n> :NERDTreeToggle<CR>
-
-" let g:user_emmet_expandabbr_key = '<Tab>'
-
+map \\ \c<space>
 ```
 
-
-
-
 open vi ,then run Vundle
-> PluginInstall
+
+	:PluginInstall
+
+
+
+## Tips
+
+convert tab to space
+
+```
+:set ts=4
+:set expandtab
+:%retab!
+```
+
+convert space to tab
+
+```
+:set ts=4
+:set noexpandtab
+:%retab!
+```
 

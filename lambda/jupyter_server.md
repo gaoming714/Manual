@@ -1,21 +1,35 @@
-## Install jupyter server
+# Install jupyter server
+
+> jupyter server
+
+---
 
 ## required
 
 nginx
 jupyter
 
-# jupyter
 
-create ~/.jupyter/jupyter_notebook_config.py
+## jupyter
+
+cmd to create ~/.jupyter/jupyter_notebook_config.py
+
+```shell
 jupyter notebook --generate-config
+```
 
-create password to ~/.jupyter/jupyter_notebook_config.json
+cmd to create password to ~/.jupyter/jupyter_notebook_config.json
+
+```shell
 jupyter notebook password
+```
+
 
 ## edit config.py
 edit ~/.jupyter/jupyter_notebook_config.py
-e.g.
+demo:
+
+```python
 ### Local IP addresses (such as 127.0.0.1 and ::1) are allowed as local, along 
 ### with hostnames configured in local_hostnames.
 c.NotebookApp.allow_remote_access = True 
@@ -27,8 +41,9 @@ c.NotebookApp.notebook_dir = '/home/gaoming/bin'
 c.NotebookApp.open_browser = False 
 ### It is a good idea to set a known, fixed port for server access
 c.NotebookApp.port = 3888
+```
 
-```py
+```python
 c.NotebookApp.allow_remote_access = True
 c.NotebookApp.ip = '127.0.0.1'
 c.NotebookApp.notebook_dir = '/home/gaoming/bin'
@@ -36,12 +51,20 @@ c.NotebookApp.open_browser = False
 c.NotebookApp.port = 3888
 ```
 
-## command to run
+run cmd : jupyter notebook
+
+or using command to run
+
+```shell
 jupyter notebook --no-browser --port=3888 --ip=0.0.0.0
+```
 
 # nginx
 
 create server /etc/nginx/site-avaliable/jupyter.conf
+map 8888 > 3888
+
+```
 server { 
     # use 'listen 80 deferred;' for Linux 
     # use 'listen 80 accept_filter=httpready;' for FreeBSD
@@ -60,7 +83,7 @@ server {
         # checks for static file, if not found proxy to app
         try_files $uri @proxy_to_app;
     }
-
+    
     location @proxy_to_app {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
@@ -74,44 +97,27 @@ server {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
     }
-
+    
     error_page 500 502 503 504 /500.html;
     location = /500.html {
         root /path/to/app/current/public;
     }
 
 }
+```
+## cmd 
 
-# restart nginx
+```
 systemctl restart nginx
 
-# start jupyter
 jupyter notebook
 
-# open web
 http://host:8888/
+```
 
-
-# daemon with pm2
-## create daemon.sh
-    /home/gaoming/Python/bin/jupyter notebook
-## or script.config.js
-module.exports = {
-  apps : [{
-    name: "jupyter",
-    script: "/home/gaoming/Python/bin/jupyter",
-    args: "notebook",
-    interpreter: "/home/gaoming/Python/bin/python"
-  }]
-}
-
-## pm2 start & save 
-    pm2 start daemon.sh
-    pm2 save
-## enable systemctl
-    su root
-    pm2 startup
-## edit /etc/systemctl/system/pm2-root
-    user = gaoming
-    /root > /home/gaoming
+## daemon with pm2
+create daemon.sh with
+```shell
+/home/gaoming/Python/bin/jupyter notebook
+```
 

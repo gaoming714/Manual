@@ -1,9 +1,8 @@
-sublime
-======
+# sublime
 
 ------
 
-### key  sublime3
+## key  sublime3
 
 ```
 ----- BEGIN LICENSE -----
@@ -21,7 +20,7 @@ F913BE58 42FEA319 F954EFDD AE881E0B
 ------ END LICENSE ------
 ```
 
-### packagecontrol.io/installation
+##  packagecontrol.io/installation
 
 The console is accessed via the ctrl+` shortcut or the View > Show Console menu.
 
@@ -30,7 +29,7 @@ import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe0
 ```
 
 
-### packages
+## packages
 
 Material Theme
 Markdown Preview
@@ -44,7 +43,7 @@ Compare Side-By-Side
 A File Icon
 HTMLBeautify
 
-### 配置文件
+## 配置文件
 
 {
     "always_show_minimap_viewport": true,

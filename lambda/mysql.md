@@ -1,10 +1,13 @@
-MySQL
-===
+# MySQL
+
+> command
+
+---
 
 ## system config bind-address, remove following.
+
 /etc/mysql/mysql.conf.d/mysqld.cnf
 bind-address      = 127.0.0.1
-
 
 ## CREATE USER
 
@@ -20,7 +23,6 @@ SELECT host,user FROM user;
 ## DROP USER
 
 DROP USER 'jeffrey'@'localhost';
-
 
 ## CREATE GRANTS
 

@@ -1,15 +1,12 @@
-git配置
-===
+# git配置
 
-here is git configure for Linux or windows
+> here is git configure for Linux or windows
 
 ---
 
-configure name and crlf
----
+## configure name
 
-
-### 1.1个人用户名
+### 1.1 个人用户名
 Linux place  ` ~/.gitconfig `
 windows place  ` ~/.gitconfig ` , in actual place  ` /c/User/Admin/.gitconfig `
 
@@ -26,17 +23,15 @@ the act place  ` /mingw64/etc/gitconfig `
 
 
 
+## 2. configure RSA
 
-configure RSA
----
-
-### 3.1 git-ssh
+### 2.1 git-ssh
 是否存在旧的密钥对,用已有的，或者删除
 
     ls -al ~/.ssh  #check
 
 
-### 3.2 生成密钥对
+### 2.2 生成密钥对
 默认路径~/.ssh/id_rsa	和	id_rsa.pub  #~
 
 	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -46,22 +41,21 @@ configure RSA
 	ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ./key
 
 
-### 3.3 登录Github, 添加rsa.pub
+### 2.3 登录Github, 添加rsa.pub
 添加id_rsa.pub
 
 
-### 3.4 系统添加 rsa 到 ssh
-ssh_config 指定 id_rsa
+### 2.4 系统添加 rsa 到 ssh
+ssh_config 指定 id_rsa ( /etc/ssh/ssh_config )
 
-    vi /etc/ssh/ssh_config
-
-```
-    Host github.com
-        HostName github.com
-        IdentityFile /.../_rsa
+```shell 
+Host github.com
+    HostName github.com
+    IdentityFile /.../_rsa
 ```
 
-### 3.5测试
+
+### 2.5测试
 返回 下文即为正确
 
     ssh -T git@github.com
@@ -70,29 +64,20 @@ ssh_config 指定 id_rsa
 可能需要更改id_rsa的权限
 
 
-muti names
----
 
-### windows  needs to disable autocrlf
-保证所有的文件都用utf-8，不进行win-linux转换
-在win上的部分 crlf 可能保存有问题
-
-    vi /mingw64/etc/gitconfig
-    autocrlf = false
-
-### 多账号设置 的方法
+## 3. 多账号设置 的方法
 
 这样你就已经正确的生成好了两个密钥，假设是：github_a和github_b分别对应的是你的账户aaaaaa和账户bbbbbb
 
 修改config文件
 
->vim ~/.ssh/config             个人
- vim /etc/ssh/ssh_config  全局
-~
+	vim ~/.ssh/config        个人
+	vim /etc/ssh/ssh_config  全局
+
 
 添加如下代码
 
-```
+```shell
 Host aaaaaa.github.com
 	HostName github.com
 	User git
@@ -108,5 +93,4 @@ Host bbbbbb.github.com
 > 例如原来的url是：git@github.com:aaaaaa/xxxxxx.git
 > 需要改成：git@aaaaaa.github.com:aaaaaa/xxxxxx.git
 > bbbbbb账号的修改也是如此
->
 

@@ -1,8 +1,9 @@
-Full Stack Developer
-========
+# Full Stack Developer
 
-node.js config
-------
+> 
+---
+
+## node.js config
 
 ### install from package
 
@@ -15,15 +16,12 @@ yarn
 express
 pm2
 
-
 ### mongoDB
 config path is /etc/mongodb.conf
 change dbpath if possible
 
 sudo service mongodb start
 sudo service mongodb stop
-
-
 
 ### yarn about ( as npm )
 
@@ -32,7 +30,6 @@ sudo yarn global config is /usr/local/share/.config/yarn/global/
 yarn need package.json
 useful: add list upgrade remove
 remenber sudo and global if you want
-
 
 ### software usefull
 Postman
