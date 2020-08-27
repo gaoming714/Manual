@@ -127,14 +127,21 @@ PySnooper
 
 # timezone
 tz = pytz.timezone('Asia/Shanghai')
-now = tz.normalize(datetime.datetime.now(pytz.utc).astimezone(tz))
+now = tz.normalize(datetime.now(pytz.utc).astimezone(tz))
 
-tz = pytz.timezone('Asia/Shanghai')
 tz_utc = pytz.timezone('UTC')
-now = tz.normalize(datetime.datetime.utcnow().astimezone(tz_utc))
+now = tz_utc.normalize(datetime.now(pytz.utc).astimezone(tz_utc))
 
 ## time but no timezone
-now = datetime.datetime.utcnow() + datetime.timedelta(hours=8)
+now = datetime.utcnow() + timedelta(hours=8)
+
+## time for simple
+tz = pytz.timezone('Asia/Shanghai')
+now = tz.normalize(datetime.now(pytz.utc).astimezone(tz))
+
+## datetime to tuple
+now.timetuple()
+time.strftime("%Y-%m-%d",now.timetuple())
 
 ## delorean
 from delorean import Delorean
@@ -142,3 +149,20 @@ from delorean import Delorean
 d = Delorean()
 d = d.shift('US/Eastern')
 return d
+
+## pytz timezone
+pytz.all_timezones_set
+'UTC', 'Asia/Shanghai', 'US/Eastern', 'US/Pacific',
+
+
+## __name__ , __file__
+
+__name__ 是package的名，立即执行的__name__ == '__main__'
+__file__ 是当前文件的相对路径的文件名
+os.getcwd()会得到的是运行文件的起始位置
+
+## jump to IPython
+from IPython import embed
+
+embed()
+
