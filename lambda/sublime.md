@@ -31,8 +31,8 @@ import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe0
 
 ## packages
 
-Material Theme
-Markdown Preview
+aterial Theme
+arkdown Preview
 Emmet
 JsForamt
 TrailingSpaces

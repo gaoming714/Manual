@@ -27,3 +27,10 @@ testdisky
 tree
 cmatrix
 
+
+## git on windows
+
+git config --global core.autocrlf false
+
+[core]
+	autocrlf = false

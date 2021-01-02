@@ -19,3 +19,11 @@ pytest-cover  -- code coverage
 # nodejs test
 
 jest
+
+
+
+
+# Video
+
+ShareX
+lightworks

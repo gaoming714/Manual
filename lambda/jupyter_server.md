@@ -32,7 +32,7 @@ demo:
 ```python
 ### Local IP addresses (such as 127.0.0.1 and ::1) are allowed as local, along 
 ### with hostnames configured in local_hostnames.
-c.NotebookApp.allow_remote_access = True 
+c.NotebookApp.allow_remote_access = True
 ## The IP address the notebook server will listen on.
 c.NotebookApp.ip = '127.0.0.1'
 ### The directory to use for notebooks and kernels.

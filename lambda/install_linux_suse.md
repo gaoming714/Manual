@@ -49,7 +49,7 @@ install zsh
 $ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 restart
 
-Manual
+anual
 
 ```shell
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh.git
@@ -66,3 +66,11 @@ sudo cp ./Documents/DocX_help/font/SourceCodePro-Semibold.otf /usr/share/fonts
 sudo fc-cache -fv
 ```
 
+## ~/.zshrc
+export PATH=$HOME/bin:$HOME/Nightly:/usr/local/bin:$PATH
+
+alias @create="bash create_activate"
+alias @act="source activate"
+alias @dct="deactivate"
+alias @venv="source /home/lambda/bin/AlphaBeta/.venv/Scripts/activate"
+alias @@@="cd /home/lambda/bin/AlphaBeta" 

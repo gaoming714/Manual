@@ -2,19 +2,18 @@
 > personal way
 
 ---
-
-## context
-
-1. run msys2 , close msys2
-2. cp pacman_source / mintty / vimrc 
-3. edit nsswitch.conf, change home_path to root
-4. run msys2
-5. install packages (ln -s /bin/vim.exe /bin/vi)
-6. install on-my-zsh
-7. edit nsswitch.conf, change shell to zsh
-8. install vim
+## lite context
+1. mkdir /root
+2. cp pacman_source / mintty / vimrc
+3. run msys2 , wait for the terminal prompt, close msys2
+4. run msys2, install packages (ln -s /bin/vim.exe /bin/vi)
+pacman -S vim zsh git p7zip rsync winpty
+5. edit nsswitch.conf, change home_path to /root
+6. edit nsswitch.conf, change shell to zsh (db_shell: /usr/bin/zsh)
+7. install on-my-zsh, sh install.sh
+8. install vimrc
 9. configure zshrc
-10. pacman update
+10. activate poetry
 11. ready for tar,  cleandb , clean home
 12. cp font to folder
 
@@ -34,11 +33,11 @@ Server = http://mirrors.ustc.edu.cn/msys2/mingw/x86_64
 Server = http://mirrors.ustc.edu.cn/msys2/msys/$arch
 ```
 
- [mirrorlist.mingw32](..\material\msys2_source\pacman.d\mirrorlist.mingw32) 
+ [mirrorlist.mingw32](..\delta\msys2_source\pacman.d\mirrorlist.mingw32) 
 
- [mirrorlist.mingw64](..\material\msys2_source\pacman.d\mirrorlist.mingw64) 
+ [mirrorlist.mingw64](..\delta\msys2_source\pacman.d\mirrorlist.mingw64) 
 
- [mirrorlist.msys](..\material\msys2_source\pacman.d\mirrorlist.msys) 
+ [mirrorlist.msys](..\delta\msys2_source\pacman.d\mirrorlist.msys) 
 
 configure PATH
 ---
@@ -76,13 +75,31 @@ FontHeight=12
 FontWeight=600
 Scrollbar=none
 Columns=100
-Rows=30
+Rows=35
 Locale=C
 Charset=UTF-8
 
-ForegroundColour=  235, 219, 178
-BackgroundColour=    0,  43,  54
-CursorColour    =   65, 255,  65
+ForegroundColour=238,238,238
+BackgroundColour=48,10,36
+CursorColour=138,226,52
+
+Black=46,52,54
+BoldBlack=85,87,83
+Red=204,0,0
+BoldRed=239,41,41
+Green=78,154,6
+BoldGreen=138,226,52
+Yellow=196,160,0
+BoldYellow=252,233,79
+Blue=52,101,164
+BoldBlue=114,159,207
+agenta=117,80,123
+BoldMagenta=173,127,168
+Cyan=6,152,154
+BoldCyan=52,226,226
+White=211,215,207
+BoldWhite=238,238,236
+
 ```
 
 ## Install packages
@@ -117,64 +134,37 @@ db_shell: /usr/bin/zsh
 
 ## Install VIM
 
-make git_folder to folder 
+Download plug.vim and put it in the "autoload" directory.
+~/.vim/autoload/plug.vim
 
-```shell
-mkdir -p ~/.vim/bundle/
+edit ~/.vimrc
 ```
-git clone files
-
-```shell
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-
-copy .vimrc to /home
-
-```vimrc
 set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Make sure you use single quotes
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 " theme
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" beauty
-Plugin 'scrooloose/nerdtree'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'yggdroot/indentline'
-" edit
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-surround'
-Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'mattn/emmet-vim'
-Plugin 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" window
+Plug 'scrooloose/nerdtree'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
-" Basic settings
+" enhance
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+
+" Initialize plugin system
+call plug#end()
+
+" Basic Settings
 set nu
 set expandtab
 set tabstop=4
@@ -183,32 +173,28 @@ set softtabstop=4
 set shiftround
 set smartindent
 set cursorline
-set numberwidth=5
 set backspace=indent,eol,start
+set numberwidth=5
 
 " Theme
 set t_Co=256
-set background=dark
 syntax enable
+set background=dark
 colorscheme gruvbox
-" let g:solarized_termcolors=256
-" colorscheme solarized
 
-" airline
+" Airline
 let g:airline_theme="luna"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#wordcount#filetypes = 0
 
-" Map
-let g:user_emmet_leader_key='<C-Y>'
+" NERDTree
 map <C-n> :NERDTreeToggle<CR>
-map \\ \c<space>
 ```
 
 open vi ,then run Vundle
 
-	:PluginInstall
+	:PlugInstall
 
 ## 若需要打包
 
@@ -224,7 +210,7 @@ source .zshrc
 
 ```shell
 # Python
-PATH_python=/d/Portable/Python/python-3.7.6.amd64
+PATH_python=/d/Portable/Python/python-3.8.5.amd64
 PATH=${PATH_python}:${PATH_python}/Scripts:$PATH
 
 # Node.js
@@ -232,17 +218,15 @@ PATH_node=/d/Portable/nodejs
 PATH=${PATH_node}:$PATH
 
 # Nightly
-PATH_nightly=/d/Portable/Nightly
-PATH=${PATH_nightly}:$PATH
+PATH_node=/d/Portable/Nightly
+PATH=${PATH_node}:$PATH
 
-# alias
 alias @@="winpty"
-alias python="winpty ipython"
-alias pip="winpty pip"
-alias pytest="winpty pytest"
-alias npm="winpty npm.cmd"
-alias node="winpty node"
-alias pm2="winpty pm2.cmd"
+alias @create="bash create_activate"
+alias @act="source activate"
+alias @dct="deactivate"
+alias @venv="source /d/bin/AlphaBeta/.venv/Scripts/activate"
+alias @@@="cd /d/bin/AlphaBeta"
 ```
 
 alias function:
@@ -252,7 +236,11 @@ alias function:
 # function node(){ winpty "/d/Portable/nodejs/$@" ;}
 
 ```
+## activate poetry
+poetry config --list
+poetry config cache-dir /d/Portable/Python
 
+cp Nightly/create_activate
 
 ## README.md  for  Msys2
 
@@ -263,7 +251,7 @@ This is a custom version of msys2
 HOME PATH   is /root
 source      is mirrors.ustc.edu.cn
 manager     is pacman
-vim         is built with vundle
+vim         is built with vim-plug
 Shell       is ZSH with on-my-zsh
 Font        is SourceCodePro-Semibold
 ```
@@ -272,27 +260,3 @@ Install SourceCodePro-Semibold.otf at first.
 
 Python & nodejs can be append to .zshrc:
 
-```shell
-# Python
-PATH_python=/d/Portable/Python/python-3.7.6.amd64
-PATH=${PATH_python}:${PATH_python}/Scripts:$PATH
-
-# Node.js
-PATH_node=/d/Portable/nodejs
-PATH=${PATH_node}:$PATH
-
-# Nightly
-PATH_nightly=/d/Portable/Nightly
-PATH=${PATH_nightly}:$PATH
-
-# alias
-alias @@="winpty"
-alias python="winpty ipython"
-alias pip="winpty pip"
-alias pytest="winpty pytest"
-alias npm="winpty npm.cmd"
-alias node="winpty node"
-alias pm2="winpty pm2.cmd"
-```
-
-or edit & run `source /plus` to wake up them

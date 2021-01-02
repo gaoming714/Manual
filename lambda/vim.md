@@ -4,7 +4,7 @@
 
 ---
 
-make git_folder to folder 
+## Vundle (drop)
 
 ```shell
 mkdir -p ~/.vim/bundle/
@@ -98,6 +98,74 @@ open vi ,then run Vundle
 	:PluginInstall
 
 
+## vim Plug
+
+Download plug.vim and put it in the "autoload" directory.
+~/.vim/autoload/plug.vim
+
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+edit ~/.vimrc
+```
+set nocompatible              " be iMproved, required
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" theme
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" window
+Plug 'scrooloose/nerdtree'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+
+" enhance
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'mattn/emmet-vim'
+
+" Initialize plugin system
+call plug#end()
+
+" Basic Settings
+set nu
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set shiftround
+set smartindent
+set cursorline
+set backspace=indent,eol,start
+set numberwidth=5
+
+" Theme
+set t_Co=256
+syntax enable
+set background=dark
+colorscheme gruvbox
+
+" Airline
+let g:airline_theme="luna"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#filetypes = 0
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+
+
+
+
+```
 
 ## Tips
 

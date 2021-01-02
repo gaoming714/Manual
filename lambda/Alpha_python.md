@@ -166,3 +166,61 @@ from IPython import embed
 
 embed()
 
+## static http server
+python -m http.server 9000
+
+### pm2 static http server
+
+```yml
+apps:
+   - name : "http-server"
+     script : "serve"
+     env:
+       PM2_SERVE_PATH : '.'
+       PM2_SERVE_PORT : 9000
+```
+### nodejs static http server
+http-server -p 9000
+
+
+## isolated poetry
+
+poetry config --list
+poetry config cache-dir /d/Portable/Python
+
+poetry config virtualenvs.in-project true --local
+
+
+
+## @create
+
+###  windows , PATH Nightly
+
+```
+#!/bin/bash
+if [ -f "activate" ];then
+  rm -f activate
+fi
+path=`poetry env info -p`
+ln -s $path\\Scripts\\activate
+```
+
+## @create
+
+### Linux , PATH Nightly
+
+```
+#!/bin/bash
+if [ -f "activate" ];then
+  rm -f activate
+fi
+path=`poetry env info -p`
+ln -s $path/bin/activate
+```
+
+
+## CRLF LF
+
+find ./ | xargs grep '^M' -l -s
+
+sed -i 's/^M//g'
