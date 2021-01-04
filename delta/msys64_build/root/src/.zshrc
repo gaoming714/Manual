@@ -97,3 +97,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Python
+PATH_python=/d/Portable/Python/python-3.8.6.amd64
+PATH=${PATH_python}:${PATH_python}/Scripts:$PATH
+
+# Node.js
+PATH_node=/d/Portable/nodejs
+PATH=${PATH_node}:$PATH
+
+# Nightly
+PATH_Nightly=/d/Portable/Nightly
+PATH=${PATH_Nightly}:$PATH
+
+alias @@="winpty"
+alias @create="bash create_activate"
+alias @act="source activate"
+alias @dct="deactivate"
+alias gg="tig"
