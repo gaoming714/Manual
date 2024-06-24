@@ -1,2 +1,2 @@
 * [Home](/)
-* [Guide](guide.md)
+* [Guide](./lambda/Install_msys2.md)
