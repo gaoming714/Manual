@@ -1,6 +1,7 @@
 # opensuse install 
 
 > personal way
+
 ------
 
 ## edit Repositories and Control
