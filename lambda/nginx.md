@@ -1,16 +1,19 @@
 # nginx
 
+> [!NOTE]  
 > easy way to build a nginx connect others(reverse proxy) and automatically start
-
 > An open proxy forwarding requests from and to anywhere on the Internet
 > A reverse proxy talking requests from the Internet and forwarding them to servers in an interneal network. Those making requests connect to the proxy and may not be aware of the internal netwark.
 
 ## Install niginx
+
 install nginx, it will create user `nginx`
+
 ```
 apt install nginx
 yum install nginx
 ```
+
 edit  `/etc/nginx/nginx.conf`
 at the end of http, ADD  "include vhosts.d"
 
@@ -24,7 +27,7 @@ include vhosts.d/*.conf;
 edit `/etc/nginx/vhosts.d/domain.com.conf`
 configre location or reverse proxy
 
-type1
+0. type0
 
 ```
 	server {
@@ -38,7 +41,7 @@ type1
 	}
 ```
 
-type2
+1. type1
 
 ```
 	server {
