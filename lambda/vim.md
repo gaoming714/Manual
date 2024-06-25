@@ -1,10 +1,9 @@
 # vim
 
-> 
+> [!NOTE]  
+> VIM, with Vundle or Plug
 
----
-
-## Vundle (drop)
+## Vundle (deprecated)
 
 ```shell
 mkdir -p ~/.vim/bundle/
@@ -94,17 +93,19 @@ map \\ \c<space>
 ```
 
 open vi ,then run Vundle
-
-	:PluginInstall
-
+```
+:PluginInstall
+```
 
 ## vim Plug
 
 Download plug.vim and put it in the "autoload" directory.
-~/.vim/autoload/plug.vim
+`~/.vim/autoload/plug.vim`
 
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 edit ~/.vimrc
 ```
@@ -114,22 +115,21 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " theme
-Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-" window
-Plug 'scrooloose/nerdtree'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
 
-" enhance
+
+" pretty
+Plug 'scrooloose/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'bronson/vim-trailing-whitespace'
+
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
-Plug 'mattn/emmet-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -147,27 +147,22 @@ set backspace=indent,eol,start
 set numberwidth=5
 
 " Theme
-set t_Co=256
 syntax enable
-set background=dark
-colorscheme gruvbox
+colorscheme dracula
 
 " Airline
-let g:airline_theme="luna"
+" let g:airline_theme = "luna"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#wordcount#filetypes = 0
+" let g:airline#extensions#wordcount#filetypes = 0
+" let g:airline_section_b = '%{strftime("%T %a")}'
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
-
-
-
-
 ```
 
 ## Tips
+
 
 convert tab to space
 
