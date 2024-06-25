@@ -1,6 +1,9 @@
 # systemctl.serivce
 
-```s
+> [!NOTE]  
+> systemctl
+
+```shell
 
 # Name of task
 # =======================
@@ -23,8 +26,6 @@ WantedBy=multi-user.target
 
 ```
 
-
-----
 ## Step:
 
 cp this.service to /usr/lib/systemd/system/shadowsock.service
