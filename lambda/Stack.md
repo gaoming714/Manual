@@ -1,29 +1,22 @@
-Details about tech stacks
-===
+# Details about tech stacks
 
-list stacks
+> List Stacks
 
 ---
 
 # python test
 
-unittest  -- in Package
-pytest -- update the unittest
-pytest-cover  -- code coverage
-
-
-
-
+- unittest  > in Package
+- pytest    > update the unittest
+- pytest-cover  > code coverage
 
 
 # nodejs test
 
-jest
-
-
+- jest
 
 
 # Video
 
-ShareX
-lightworks
+- ShareX
+- lightworks
