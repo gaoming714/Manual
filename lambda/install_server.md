@@ -1,39 +1,44 @@
 ## basic
 
+```
 apt update
 apt install zsh
 apt install git
 apt install vim
+```
 
 ## add user
 
 adduser lambda
-@ /etc/passwd
-    /bin/bash > /bin/zsh
-@ /etc/sudoer
-    sudo:>..... + lambda
+/etc/passwd
+> /bin/bash > /bin/zsh
 
-## zsh oh-my-zsh
+/etc/sudoer
+> sudo:>..... + lambda
 
-$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-$ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+## zsh & oh-my-zsh
+
+[zsh.md](/lambda/zsh.md)
 
 ## vimrc
-cp .vimrc to ~
 
-:pluginstall
+[vim.md](/lambda/vi.md)
 
 ## python
+
 download miniconda
+
+```shell
 ./miniconda > /home/lambda/Python
-ln -s /home/lambda/Python/bin/conda /home/lambda/bin/conda
 
 conda install poetry
 conda update --all
 ln -s /home/lambda/Python/bin/poetry /home/lambda/bin/poetry
+```
 
-note: poetry as the unique interface
+note: `poetry` is the unique interface
 
 ## nodejs
-apt install nodejs npm
+
+install nvm & nodejs
 
