@@ -1,232 +1,89 @@
 # Python log
-
-> using package logger in python
+> [!NOTE]  
+> using loguru logger in python
 
 ---
 
-## function, 使用 logging
+## package
+
+> loguru
+
+## how to use 
 
 ```python
-import logging
-```
+from util import logConfig, logger
+logConfig("logs/download.log", rotation="10 MB", level="DEBUG", lite=True)
 
-1. 创建一个logger
+logger.warning("Please Login~")
+```
 
 ```python
-logger = logging.getLogger()   # 定义对应的程序模块名name，默认是root
-logger.setLevel(logging.INFO)  # 指定最低的日志级别 critical > error > warning > info > debug
-```
+#util.py
+from loguru import logger
 
-2. 创建一个handler，用于写入日志文件
+def set_datetime(record):
+    record["extra"]["datetime"] = pendulum.now("Asia/Shanghai")
 
-```python
-logfile = './logfile.log'
-fh = logging.FileHandler(logfile, mode='a',encoding="utf-8")
-fh.setLevel(logging.DEBUG)  # 用于写到file的等级开关
-```
 
-3. 再创建一个handler,用于输出到控制台
-
-```python
-ch = logging.StreamHandler()
-ch.setLevel(logging.WARNING)    # 输出到console的log等级的开关
-```
-
-4. 定义handler的输出格式
-
-```python
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-fh.setFormatter(formatter)
-ch.setFormatter(formatter)
-```
-
-5. 将logger添加到handler里面
-
-```python
-logger.addHandler(fh)
-logger.addHandler(ch)
-```
-6. 测试logger
-
-```python
-if __name__ == '__main__':
-    logger.debug('debug message')
-    logger.info('info message')
-    logger.warning('warning message')
-    logger.error('error message')
-    logger.critical('critical message')
-```
-
-0. 汇总
-
-```
-import logging
-
-# create & setLevel
-# critical > error > warning > info > debug
-logger = logging.getLogger()  # 定义对应的程序模块名name，默认是root
-logger.setLevel(logging.INFO) # 指定最低的日志级别 
-
-# FileHandler
-logfile = './logfile.log'
-fh = logging.FileHandler(logfile, mode='a',encoding="utf-8")
-fh.setLevel(logging.DEBUG)  # 用于写到file的等级开关
-
-# StreamHandler
-ch = logging.StreamHandler()
-ch.setLevel(logging.WARNING)    # 输出到console的log等级的开关
-
-# addHandler
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-fh.setFormatter(formatter)
-ch.setFormatter(formatter)
-logger.addHandler(fh)
-logger.addHandler(ch)
-
-if __name__ == '__main__':
-    logger.debug('debug message')
-    logger.info('info message')
-    logger.warning('warning message')
-    logger.error('error message')
-    logger.critical('critical message')
-
-```
-
-## Example :
-
-path: project/util/log.py
-
-```
-import os
-import sys
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# BASE_DIR = os.path.dirname(os.getcwd()) # for jupyter
-sys.path.append(BASE_DIR)
-
-from datetime import datetime, timedelta
-import time
-import pytz
-import logging
-
-DEFAULT_LOGFILE = os.path.join(BASE_DIR, "log", "main.log")
-
-def haunter(logname = __name__, logfile = DEFAULT_LOGFILE, loglevel = logging.DEBUG):
+def logConfig(log_file="logs/default.log", rotation="10 MB", level="DEBUG", stdout=True, lite=False):
     """
+    配置 Loguru 日志记录
+    :param log_level: 日志级别，如 "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
+    :param log_file: 日志文件路径
+    :param rotation: 日志文件轮换设置，如 "10 MB" 表示文件大小达到 10MB 时轮换
+    使用方法
+
+    # 在程序开始时配置日志
+    from model.util import logConfig, logger
+    logConfig(log_file="myapp.log", rotation="5 MB")
+    # 使用 logger 记录日志
+    logger.info("This is an info message")
+    logger.debug("This is a debug message")
     """
-    # create logger
-    logger = logging.getLogger(logname)
-    logger.setLevel(loglevel)
-
-    # set gmtime for UTC or lambda for localtime
-    tz = pytz.timezone("Asia/Shanghai")
-    localtime = tz.normalize(datetime.now(pytz.utc).astimezone(tz))
-    # gmtime
-    # logging.Formatter.converter = time.gmtime
-    # localtime
-    logging.Formatter.converter = lambda *foo: localtime.timetuple()
-
-
-    # set FileHandler & StreamHandler
-    fh = logging.FileHandler(logfile, mode='a', encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.WARNING)
-
-    # set Formatter
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    fh.setFormatter(formatter)
-    ch.setFormatter(formatter)
-
-    # add Handler
-    logger.addHandler(fh)
-    logger.addHandler(ch)
-
-    return logger
-
-
-if __name__ == '__main__':
-    LOG = haunter(__name__)
-    LOG.debug('debug message')
-    LOG.info('info message')
-    LOG.warning('warning message')
-    LOG.error('error message')
-    LOG.critical('critical message')
-
-```
-
-
-
-## Class
-
-```
-import logging
-import os.path
-import time
-from colorama import Fore, Style
-import sys
-
-
-class Logger(object):
-    def __init__(self, logger):
-        """
-        指定保存日志的文件路径，日志级别，以及调用文件
-        将日志存入到指定的文件中
-        :param logger:  定义对应的程序模块名name，默认为root
-        """
-
-        # 创建一个logger
-        self.logger = logging.getLogger(name=logger)
-        self.logger.setLevel(logging.DEBUG)  # 指定最低的日志级别 critical > error > warning > info > debug
-    
-        # 创建一个handler，用于写入日志文件
-        rq = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime(time.time()))
-        log_path = os.getcwd() + "/logs/"
-        log_name = log_path + rq + ".log"
-        #  这里进行判断，如果logger.handlers列表为空，则添加，否则，直接去写日志，解决重复打印的问题
-        if not self.logger.handlers:
-            # 创建一个handler，用于输出到文件
-            fh = logging.FileHandler(log_name,encoding="utf-8")
-            fh.setLevel(logging.INFO)
-    
-            # 创建一个handler，用于输出到控制台
-            ch = logging.StreamHandler(sys.stdout)
-            ch.setLevel(logging.DEBUG)
-    
-            # 定义handler的输出格式
-            formatter = logging.Formatter(
-                "%(asctime)s - %(filename)s[line:%(lineno)d] - %(name)s - %(message)s")
-            ch.setFormatter(formatter)
-            fh.setFormatter(formatter)
-    
-            # 给logger添加handler
-            self.logger.addHandler(fh)
-            self.logger.addHandler(ch)
-    
-    def debug(self, msg):
-        """
-        定义输出的颜色debug--white，info--green，warning/error/critical--red
-        :param msg: 输出的log文字
-        :return:
-        """
-        self.logger.debug(Fore.WHITE + "DEBUG - " + str(msg) + Style.RESET_ALL)
-    
-    def info(self, msg):
-        self.logger.info(Fore.GREEN + "INFO - " + str(msg) + Style.RESET_ALL)
-    
-    def warning(self, msg):
-        self.logger.warning(Fore.RED + "WARNING - " + str(msg) + Style.RESET_ALL)
-    
-    def error(self, msg):
-        self.logger.error(Fore.RED + "ERROR - " + str(msg) + Style.RESET_ALL)
-    
-    def critical(self, msg):
-        self.logger.critical(Fore.RED + "CRITICAL - " + str(msg) + Style.RESET_ALL)
-
-if __name__ == '__main__':
-    log = Logger(logger="main")
-    log.debug("debug")
-    log.info("info")
-    log.error("error")
-    log.warning("warning")
-    log.critical("critical")
+    logger.remove()  # 移除默认的处理程序（如果有的话）
+    if lite:
+        style = (
+            " [ <level>{level: <8}</level>] "
+            + "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan>"
+            + "<green>♻ </green>"
+            + "<level>{message}</level>"
+        )
+    else:
+        style = (
+            "<green>{extra[datetime]}</green>"
+            + " [ <level>{level: <8}</level>] "
+            + "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan>"
+            + "<green>♻ </green>"
+            + "<level>{message}</level>"
+        )
+    # alternative ➲ ⛏ ☄ ➜ ♻ ✨
+    logger.configure(patcher=set_datetime)
+    if stdout == True:
+        logger.add(sys.stderr, level=level, colorize=True, format=style)
+    logger.add(
+        log_file, colorize=False, encoding="utf-8", format=style, rotation=rotation
+    )
+    logger.add(
+        log_file + ".rich",
+        colorize=True,
+        encoding="utf-8",
+        format=style,
+        rotation=rotation,
+    )
+    logger.add(
+        log_file + ".warning",
+        level="WARNING",
+        colorize=False,
+        encoding="utf-8",
+        format=style,
+        rotation=rotation,
+    )
+    logger.add(
+        log_file + ".warning.rich",
+        level="WARNING",
+        colorize=True,
+        encoding="utf-8",
+        format=style,
+        rotation=rotation,
+    )
 ```
