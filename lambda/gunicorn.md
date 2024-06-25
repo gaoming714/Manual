@@ -1,14 +1,12 @@
 # gunicorn
 
+> [!NOTE]  
 > Python WSGI HTTP Server for UNIX
 > daemon for python server.
-
----
 
 1. nginx
 2. gunicorn
 
----
 
 ## 1. nginx
 
@@ -59,7 +57,6 @@ server {
     }
 }
 ```
-
 
 
 ## 2.1 gunicorn one app type I, 
