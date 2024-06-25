@@ -3,8 +3,6 @@
 > [!TIP]
 > About nodejs
 
----
-
 ## registry
 npm config set registry https://registry.npm.taobao.org
 > C:\Users\Administrator
