@@ -7,6 +7,7 @@
 ## configure name
 
 ### 1.1 个人用户名
+
 Linux place  ` ~/.gitconfig `
 windows place  ` ~/.gitconfig ` , in actual place  ` /c/User/Admin/.gitconfig `
 
@@ -15,6 +16,7 @@ windows place  ` ~/.gitconfig ` , in actual place  ` /c/User/Admin/.gitconfig `
 
 
 ### 1.2 系统用户名
+
 the act place  ` /etc/gitconfig `
 the act place  ` /mingw64/etc/gitconfig `
 
@@ -26,12 +28,14 @@ the act place  ` /mingw64/etc/gitconfig `
 ## 2. configure RSA
 
 ### 2.1 git-ssh
+
 是否存在旧的密钥对,用已有的，或者删除
 
     ls -al ~/.ssh  #check
 
 
 ### 2.2 生成密钥对
+
 默认路径~/.ssh/id_rsa	和	id_rsa.pub  #~
 
 	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -42,11 +46,12 @@ the act place  ` /mingw64/etc/gitconfig `
 
 
 ### 2.3 登录Github, 添加rsa.pub
+
 添加id_rsa.pub
 
 
 ### 2.4 系统添加 rsa 到 ssh
-ssh_config 指定 id_rsa ( /etc/ssh/ssh_config )
+ssh_config 指定 id_rsa ( ~/.ssh/config )
 
 ```shell 
 Host github.com
@@ -56,10 +61,12 @@ Host github.com
 
 
 ### 2.5测试
-返回 下文即为正确
 
-    ssh -T git@github.com
->Hi "username!" You've successfully authenticated, but GitHub does not provide shell access.
+返回 下文即为正确
+```shell
+ssh -T git@github.com
+> Hi "username!" You've successfully authenticated, but GitHub does not provide shell access.
+```
 
 可能需要更改id_rsa的权限
 
@@ -90,7 +97,7 @@ Host bbbbbb.github.com
 
 修改ssh URL(maybe)
 
-> 例如原来的url是：git@github.com:aaaaaa/xxxxxx.git
-> 需要改成：git@aaaaaa.github.com:aaaaaa/xxxxxx.git
-> bbbbbb账号的修改也是如此
+	例如原来的url是：git@github.com:aaaaaa/xxxxxx.git
+	需要改成：git@aaaaaa.github.com:aaaaaa/xxxxxx.git
+	bbbbbb账号的修改也是如此
 
