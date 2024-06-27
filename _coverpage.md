@@ -1,4 +1,4 @@
-![logo](/asus.png)
+![logo](/delta/winnie.png)
 
 # docsify <small>3.5</small>
 
