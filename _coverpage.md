@@ -1,6 +1,6 @@
 ![logo](/delta/winnie.png)
 
-# docsify <small>3.5</small>
+# Manual <small>0.01</small>
 
 > A magical documentation site generator.
 
@@ -8,5 +8,5 @@
 - No statically built html files
 - Multiple themes
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[Get Started](#docsify)
+[GitHub](https://github.com/gaoming714/Manual)
+[Get Started](#home)
