@@ -1,3 +1,8 @@
+# Server Debian or ubuntu
+
+> [!TIP]
+> Install server
+
 ## basic
 
 ```

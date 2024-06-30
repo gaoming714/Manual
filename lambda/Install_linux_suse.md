@@ -1,6 +1,7 @@
-# opensuse install 
+# opensuse install
 
-> personal way
+> [!TIP]
+> personal way to install suse linux
 
 ------
 

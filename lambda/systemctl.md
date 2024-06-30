@@ -1,6 +1,6 @@
 # systemctl.serivce
 
-> [!NOTE]  
+> [!TIP]
 > systemctl
 
 ```shell

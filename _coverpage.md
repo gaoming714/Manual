@@ -1,6 +1,6 @@
-![logo](/delta/winnie.png)
+![logo](/delta/winnie.png ':size=16%')
 
-# Manual <small>0.01</small>
+# Honeypot <small>0.01</small>
 
 > A magical documentation site generator.
 

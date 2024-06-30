@@ -11,7 +11,7 @@ use it in  DNS
 
 ### baidu
 
-180.76.76.76 
+180.76.76.76
 
 ### norton
 

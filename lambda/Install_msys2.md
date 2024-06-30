@@ -1,8 +1,7 @@
-# 配置一个msys2
+# msys2 config
 
+> [!TIP]
 > My solution
-
----
 
 ## lite context
 

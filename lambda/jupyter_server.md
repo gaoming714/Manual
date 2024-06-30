@@ -1,6 +1,6 @@
 # Install jupyter server
 
-> [!NOTE]  
+> [!TIP]  
 > jupyter server
 
 ## required

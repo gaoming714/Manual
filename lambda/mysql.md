@@ -1,6 +1,4 @@
 # Mysql
 
-> [!NOTE]  
-> To Do
-
----
+> [!TIP]
+> Todo

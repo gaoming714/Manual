@@ -1,6 +1,6 @@
-![logo](/delta/winnie.png)
+![logo](/delta/winnie.png "Logo" style="width: 200px;")
 
-# 手册 <small>3.5</small>
+# 蜜罐 <small>0.1</small>
 
 > 一个神奇的文档
 

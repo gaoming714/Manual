@@ -11,7 +11,7 @@ tune2fs -L Mars /dev/sdx1
 
 SGI XFS
 	名稱不可以超過 12 個字元
-xfs_admin -L Mars /dev/sdx1 
+xfs_admin -L Mars /dev/sdx1
 
 
 ReiserFS

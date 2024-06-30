@@ -1,6 +1,7 @@
 # sublime
 
-------
+> [!TIP]
+> sublime
 
 ## key  sublime3
 

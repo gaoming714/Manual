@@ -1,9 +1,9 @@
 # selenium
+
+> [!TIP]
 > Webdriver
 > https://www.selenium.dev/documentation/en/
 > https://selenium-python.readthedocs.io/
-
----
 
 ```python
 from selenium import webdriver
@@ -44,7 +44,7 @@ elements is a WebElement list, or [] if no found
 ### find_element returns WebDriver
 represents the browser
 find_element_by_id returns WebElement
-represents a particular DOM node 
+represents a particular DOM node
 (a control, e.g. a link or input field, etc.)
 
     By.CLASS_NAME           find_element_by_class_name

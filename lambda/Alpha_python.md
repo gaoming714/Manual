@@ -1,6 +1,9 @@
 # Python AlphaBeta
 
-### JSON & pickle
+> [!TIP]
+> About Python
+
+## JSON & pickle
 
 ``` python
 # json
@@ -89,7 +92,7 @@ sys.path.append(BASE_DIR)
 
 PySnooper
 
-## __name__ , __file__
+## `__name__` , `__file__`
 
 __name__ 是package的名，立即执行的__name__ == '__main__'
 __file__ 是当前文件的相对路径的文件名

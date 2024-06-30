@@ -1,7 +1,8 @@
 # Git Guild
+
+> [!TIP]
 > for local git project
 
----
 ## create bare repo
 ### create
 

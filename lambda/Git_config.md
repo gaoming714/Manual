@@ -1,8 +1,7 @@
-# git配置
+# git config
 
-> here is git configure for Linux or windows
-
----
+> [!TIP]
+> Git configure for Linux or windows
 
 ## 1.configure name
 

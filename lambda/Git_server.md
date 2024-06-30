@@ -1,4 +1,6 @@
 # Git server
+
+> [!TIP]
 > build a git server
 > the easy to build a server for guys with same permission on Linux
 > on Linux

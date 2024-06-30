@@ -1,8 +1,7 @@
 # Python log
-> [!NOTE]  
-> using loguru logger in python
 
----
+> [!TIP]  
+> using loguru logger in python
 
 ## package
 
