@@ -1,5 +1,6 @@
 # HoneyPot
 
+> [!TIP]
 > There is my manual about learning and sharing.
 
 ## Examples
