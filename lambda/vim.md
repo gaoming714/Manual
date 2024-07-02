@@ -19,7 +19,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-2. edit ~/.vimrc
+2. edit ~/.vimrc ![vimrc](https://github.com/gaoming714/Manual/blob/master/delta/vim/.vimrc)
    
 ```vimrc
 set nocompatible              " be iMproved, required
