@@ -20,7 +20,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 
 2. edit ~/.vimrc
-```
+   
+```vimrc
 set nocompatible              " be iMproved, required
 call plug#begin('~/.vim/plugged')
 
