@@ -1,0 +1,1 @@
+sh src/install.sh
