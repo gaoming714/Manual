@@ -16,14 +16,13 @@ export default hopeTheme({
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
   repo: "gaoming714/Manual",
+  docsBranch: "master",
 
   docsDir: "docs",
 
   navbar,
 
   // sidebar,
-
-  // footer: "Build by Vuepress with vuepress-theme-hope",
 
   displayFooter: true,
 
