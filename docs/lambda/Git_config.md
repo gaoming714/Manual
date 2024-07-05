@@ -1,4 +1,8 @@
-# git config
+---
+icon: fab fa-git-alt
+---
+
+# Git Config
 
 > [!TIP]
 > Git configure for Linux or windows

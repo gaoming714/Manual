@@ -9,8 +9,8 @@ bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-heroText: VuePress Theme Hope
-tagline: A VuePress theme with tons of features✨
+heroText: HoneyPot
+tagline: A personal record document full of awesome🍯
 actions:
   - text: Get Started
     link: ./lambda/
@@ -19,11 +19,11 @@ actions:
 
   - text: Guide
     icon: lightbulb
-    link: ./guide/
+    link: ./delta/
 
   - text: Demos
     icon: star
-    link: ./demo/
+    link: ./lambda/vim
 
 highlights:
   - header: Easy to install

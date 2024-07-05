@@ -4,30 +4,29 @@ export default navbar([
   "/",
   {
     text: "Lambda",
-    icon: "book",
+    icon: "fas fa-hat-wizard",
     link: "/lambda/",
   },
-
   {
     text: "Delta",
-    icon: "lightbulb",
+    icon: "fas fa-hourglass-half",
     prefix: "/delta/",
     children: [
       {
         text: "Vim",
-        icon: "lightbulb",
+        icon: "fas fa-hourglass-half",
         link: ".vimrc",
       },
       {
         text: "None",
-        icon: "lightbulb",
+        icon: "fas fa-hourglass-half",
         link: "none",
       },
     ],
   },
   {
-    text: "V2 Docs",
+    text: "Support",
     icon: "book",
-    link: "https://theme-hope.vuejs.press/",
+    link: "/support",
   },
 ]);

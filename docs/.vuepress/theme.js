@@ -37,6 +37,6 @@ export default hopeTheme({
     mdEnhance: {
       gfm: true,
     },
-    searchPro: {}
+    searchPro: {autoSuggestions:false},
   },
 });

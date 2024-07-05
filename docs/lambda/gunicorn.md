@@ -1,3 +1,7 @@
+---
+icon: fas fa-horse
+---
+
 # gunicorn
 
 > [!NOTE]  

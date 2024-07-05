@@ -1,3 +1,7 @@
+---
+icon: fab fa-steam
+---
+
 # opensuse install
 
 > [!TIP]

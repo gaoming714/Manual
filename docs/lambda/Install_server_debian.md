@@ -1,3 +1,7 @@
+---
+icon: fab fa-steam
+---
+
 # Server Debian or ubuntu
 
 > [!TIP]

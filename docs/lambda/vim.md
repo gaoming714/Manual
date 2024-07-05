@@ -1,8 +1,10 @@
+---
+icon: fab fa-vimeo-v
+---
+
 # vim
 
 > VIM, with Vundle or Plug
-
-
 
 ## vim Plug
 
@@ -92,7 +94,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 3. Add the following to your .vimrc
 
-```vimrc
+```shell
 set nocompatible              " be iMproved, required
 filetype off                  " required
 

@@ -1,3 +1,7 @@
+---
+icon: fab fa-steam
+---
+
 # Python log
 
 > [!TIP]  

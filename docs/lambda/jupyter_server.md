@@ -1,3 +1,7 @@
+---
+icon: fab fa-steam
+---
+
 # Install jupyter server
 
 > [!TIP]  

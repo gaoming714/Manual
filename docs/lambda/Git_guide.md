@@ -1,3 +1,7 @@
+---
+icon: fab fa-git-alt
+---
+
 # Git Guild
 
 > [!TIP]

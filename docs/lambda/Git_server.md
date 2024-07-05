@@ -1,14 +1,17 @@
-# Git server
+---
+icon: fab fa-git-alt
+---
+
+# Git Server
 
 > [!TIP]
 > build a git server
 > the easy to build a server for guys with same permission on Linux
-> on Linux
 
 ## install git & configure
 ```shell
-	apt install git
-	yum install git
+apt install git
+yum install git
 ```
 
 add user name git, it is only used when needing RSA
@@ -22,7 +25,9 @@ passwd git
 
 edit /etc/passwd
 
-> git:x:1000:1000::/home/git:/usr/bin/git-shell
+```
+git:x:1000:1000::/home/git:/usr/bin/git-shell
+```
 
 ## Initialized empty Git repository
 > it is a repository that doesn’t contain a working directory (name.git)

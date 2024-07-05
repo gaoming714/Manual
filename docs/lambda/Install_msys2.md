@@ -1,3 +1,7 @@
+---
+icon: fab fa-steam
+---
+
 # msys2 config
 
 > [!TIP]

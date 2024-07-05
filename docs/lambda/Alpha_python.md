@@ -1,3 +1,7 @@
+---
+icon: fab fa-steam
+---
+
 # Python AlphaBeta
 
 > [!TIP]

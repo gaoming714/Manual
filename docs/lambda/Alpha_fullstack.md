@@ -1,4 +1,8 @@
-# Details about tech stacks
+---
+icon: fab fa-steam
+---
+
+# Alpha about tech stacks
 
 > List Stacks
 
