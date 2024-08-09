@@ -1,4 +1,0 @@
-# Mysql
-
-> [!TIP]
-> Todo

@@ -1,3 +1,0 @@
-- Delta
-  - [.vim](./vim/vim)
-  - [./vimrc](./vim/.vimrc)
