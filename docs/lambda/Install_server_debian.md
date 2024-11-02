@@ -22,9 +22,11 @@ adduser lambda
 /etc/passwd
 > /bin/bash > /bin/zsh
 
+```
 /etc/group
 sudo gpasswd -a <username> <groupname>
 sudo gpasswd -a lambda sudo
+```
 
 ## zsh & oh-my-zsh
 
