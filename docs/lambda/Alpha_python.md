@@ -125,16 +125,11 @@ apps:
        PM2_SERVE_PORT : 9000
 ```
 
-### nodejs static http server
-
-http-server -p 9000
-
-
 ## isolated poetry
 
 ``` shell
 poetry config --list
-poetry config cache-dir "D:\\Portable\\Python"
+poetry config cache-dir "D:\\Portable\\Python\\pypoetry"
 poetry config virtualenvs.in-project true --local
 ```
 
