@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # Install jupyter server
 
-> [!TIP]  
-> jupyter server
+::: tip
+jupyter server
+:::
 
 ## required
 

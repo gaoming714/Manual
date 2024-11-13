@@ -8,7 +8,7 @@ icon: fab fa-steam
 
 ---
 
-``` toml
+```toml
 [Config]
 PortalUsername = 'olive'
 PortalPassword = 'olive'

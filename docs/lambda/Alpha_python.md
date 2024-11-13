@@ -4,12 +4,26 @@ icon: fab fa-steam
 
 # Python AlphaBeta
 
-> [!TIP]
-> About Python
+## packages
+
+- pendulum
+  时间
+
+- tomlkit
+  处理 toml
+
+- pygame
+  播放音乐视频
+
+- poetry
+  venv
+
+- PySnooper
+  debug module
 
 ## JSON & pickle
 
-``` python
+```python
 # json
 data = None
 def load_it(json_path):
@@ -48,19 +62,14 @@ df.T.to_json(force_ascii=False) # ZH ascii
 
 pd.read_json(jj,orient="index")
 
-
-
 ### json to dict
+
 data_dict = json.loads(json_str)
 json_str = json.dumps(data_dict)
 
-
-
-
-
 ## DF
 
-``` python
+```python
 #方法1：
 data['升阻比']=data['升力系数']/data['阻力系数']
 
@@ -77,65 +86,55 @@ data['升阻比']=data['升力系数']/data['阻力系数']
 se_tmp = df['name'].apply(lambda x:x[:1])
 ```
 
-
-## venv
-
-python -m venv venvname
-source venvname/Scripts/activate
-deactivate
-
-## project
+## projects
 
 import os
 import sys
-__file__ = os.getcwd()
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+**file** = os.getcwd()
+BASE_DIR = os.path.dirname(os.path.abspath(**file**))
 sys.path.append(BASE_DIR)
 
-## debug module
+## 语法糖
 
-PySnooper
+`__name__` , `__file__`
 
-## `__name__` , `__file__`
-
-__name__ 是package的名，立即执行的__name__ == '__main__'
-__file__ 是当前文件的相对路径的文件名
-os.getcwd()会得到的是运行文件的起始位置
+`__name__` 是 package 的名，立即执行的 `__name__ == '__main__'`
+`__file__` 是当前文件的相对路径的文件名
+`os.getcwd()`会得到的是运行文件的起始位置
 
 ## jump to IPython
 
-from IPython import embed
-
-embed()
-
+1. ipdb
+    ```python
+    import ipdb
+    ipdb.set_trace()
+    ```
+2. embed
+    ```python
+    from IPython import embed
+    embed()
+    ```
 
 ## static http server
 
 python -m http.server 9000
 
+## isolated 
 
-### pm2 static http server
+### pip
 
-``` yml
-apps:
-   - name : "http-server"
-     script : "serve"
-     env:
-       PM2_SERVE_PATH : '.'
-       PM2_SERVE_PORT : 9000
-```
+1. copy runtime to folder `runtime`
+2. use local runtime python to run python & pip
+    ```shell
+    runtime/python -m pip install **
+    runtime/python script.py
+    ```
 
-## isolated poetry
+### poetry
 
-``` shell
+```shell
 poetry config --list
 poetry config cache-dir "D:\\Portable\\Python\\pypoetry"
 poetry config virtualenvs.in-project true --local
 ```
 
-## CRLF LF
-
-``` shell
-find ./ | xargs grep '^M' -l -s
-sed -i 's/^M//g'
-```

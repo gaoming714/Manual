@@ -4,12 +4,13 @@ icon: fab fa-github-alt
 
 # Git Webhook Introduction
 
-> [!TIP]
-> webhook script and sha-256 tip
+::: tip
+webhook script and sha-256 tip
+:::
 
 
 > A minimal Flask application to handle github webhook.
-> ![HookScript](https://github.com/gaoming714/HookScript)
+> [HookScript](https://github.com/gaoming714/HookScript)
 
 ## TIPS
 
@@ -26,8 +27,9 @@ payload 需要使用json *一定要去掉所有的空格和换行*
 
 然后就可以用postman模拟发送post请求了
 
-> [!NOTE]
-> 也推荐使用 httpie
+::: tip
+也推荐使用 httpie
+:::
 
 ### 测试代码 sha-256 算法(测试 Webhook 有效负载验证)
 

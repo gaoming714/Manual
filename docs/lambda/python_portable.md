@@ -4,9 +4,10 @@ icon: fab fa-steam
 
 # python portable
 
-> [!TIP]
-> create a portable python package on windows.(整合包)
-> win only. (mac later)
+::: tip
+create a portable python package on windows.(整合包)
+win only. (mac later)
+:::
 
 ## background
 
@@ -19,9 +20,10 @@ For users who don't have a Python environment, if you want to give them a Python
 
 将一个便携版的python放到目录中，利用这个  `python -m pip` 安装包, 或者这里只引入一个venv或者poetry，在目标设备上进行最后一步安装依赖。可以提前准备artifacts
 
-> [!TIP]
-> 注意：一定要分清楚你选择的依赖方案是采用的绝对路径还是相对路径，一般最后一install都是绝对路径，所以这一步一定要在目标机器上运行（也就是用户运行python程序之前需要初始化）。
-> 要提醒用户初始化后更改目录需要重新初始化。
+::: tip
+注意：一定要分清楚你选择的依赖方案是采用的绝对路径还是相对路径，一般最后一install都是绝对路径，所以这一步一定要在目标机器上运行（也就是用户运行python程序之前需要初始化）。
+要提醒用户初始化后更改目录需要重新初始化。
+:::
 
 
 ## Steps for pip ( to be tested )
@@ -47,7 +49,7 @@ For anaconda, copy all files to project/runtime
 ### 4. create bat file
 
 On target os, only need to drop script.py on python.bat (runtime\python.exe)
-``` bat
+```bat
 @echo off
 runtime\python.exe "%1"
 ```
@@ -74,7 +76,7 @@ All the package is controlled by poety. config cache-dir in local path.
 
 create init.bat for user to run it on target machine. poetry will create hard code path.
 
-``` bat
+```bat
 @echo off
 :: init.bat
 runtime\python.exe -m poetry install
@@ -83,7 +85,7 @@ pause
 ```
 
 On target os, only need to drop script.py on python.bat (runtime\python.exe)
-``` bat
+```bat
 @echo off
 runtime\python.exe -m poetry run python "%1"
 ```

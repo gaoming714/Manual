@@ -1,7 +1,8 @@
 # HoneyPot
 
-> [!TIP]
-> There is my manual about learning and sharing.
+::: tip
+There is my manual about learning and sharing.
+:::
 
 ## Examples
 

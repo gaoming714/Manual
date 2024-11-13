@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # opensuse install
 
-> [!TIP]
-> personal way to install suse linux
+::: tip
+personal way to install suse linux
+:::
 
 ------
 

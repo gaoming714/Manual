@@ -4,9 +4,13 @@ icon: fab fa-git-alt
 
 # Git Server
 
-> [!TIP]
-> build a git server
-> the easy to build a server for guys with same permission on Linux
+::: tip
+build a git server
+the easy to build a server for guys with same permission on Linux
+:::
+
+
+
 
 ## install git & configure
 ```shell

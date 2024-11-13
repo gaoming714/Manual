@@ -8,9 +8,10 @@ icon: fab fa-vimeo-v
 
 ## vim Plug
 
-> [!TIP]
-> [VIM folder](/delta/vim/) Copy these to ~/
-> open vim and run `:PlugInstall`
+::: tip
+[VIM folder](/delta/vim/) Copy these to ~/
+open vim and run `:PlugInstall`
+:::
 
 ### Manual Steps
 1. Download plug.vim and put it in the "autoload" directory.

@@ -4,9 +4,10 @@ icon: fas fa-horse
 
 # gunicorn
 
-> [!NOTE]  
-> Python WSGI HTTP Server for UNIX
-> daemon for python server.
+::: tip
+Python WSGI HTTP Server for UNIX
+daemon for python server.
+:::
 
 1. nginx
 2. gunicorn

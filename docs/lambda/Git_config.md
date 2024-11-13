@@ -4,8 +4,9 @@ icon: fab fa-git-alt
 
 # Git Config
 
-> [!TIP]
-> Git configure for Linux or windows
+::: tip
+Git configure for Linux or windows
+:::
 
 ## 1.configure name
 
@@ -13,20 +14,19 @@ icon: fab fa-git-alt
 
 Linux place  ` ~/.gitconfig `
 windows place  ` ~/.gitconfig `
-
-    git config --global user.name "username"
-    git config --global user.email "username@gmail.com"
-
+```shell
+git config --global user.name "username"
+git config --global user.email "username@gmail.com"
+```
 
 ### 1.2 系统用户名
 
 the act place  ` /etc/gitconfig `
 the act place  ` /mingw64/etc/gitconfig `
-
-    git config --system user.name "username"
-    git config --system user.email "username@gmail.com"
-
-
+```shell
+git config --system user.name "username"
+git config --system user.email "username@gmail.com"
+```
 
 ## 2. configure RSA
 
@@ -105,12 +105,14 @@ Host bbbbbb.github.com
 
 ## 4. windows init 处理字符为LF
 
-git config --global core.autocrlf false
+```shell
+git config --global core.autocrlf input
+```
 
 ~/.gitconfig
 
 ```shell
 [core]
     editor = vim
-    autocrlf = false
+    autocrlf = input
 ```

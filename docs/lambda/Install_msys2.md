@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # msys2 config
 
-> [!TIP]
-> My solution
+::: tip
+My solution
+:::
 
 ## lite context
 

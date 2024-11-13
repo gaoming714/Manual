@@ -4,10 +4,11 @@ icon: fab fa-steam
 
 # selenium
 
-> [!TIP]
-> Webdriver
-> https://www.selenium.dev/documentation/en/
-> https://selenium-python.readthedocs.io/
+::: tip
+Webdriver
+https://www.selenium.dev/documentation/en/
+https://selenium-python.readthedocs.io/
+:::
 
 ```python
 from selenium import webdriver

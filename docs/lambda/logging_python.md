@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # Python log
 
-> [!TIP]  
-> using loguru logger in python
+::: tip
+using loguru logger in python
+:::
 
 ## package
 

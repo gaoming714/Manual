@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # Server Debian or ubuntu
 
-> [!TIP]
-> Install server
+::: tip
+Install server
+:::
 
 ## basic
 

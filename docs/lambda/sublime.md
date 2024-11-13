@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # sublime
 
-> [!TIP]
-> sublime
+::: tip
+sublime
+:::
 
 ## key  sublime3
 

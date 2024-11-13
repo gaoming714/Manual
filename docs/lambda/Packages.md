@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # Packages
 
-> [!TIP]
-> Useful packages
+::: tip
+Useful packages
+:::
 
 ---
 

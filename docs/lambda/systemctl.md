@@ -4,8 +4,9 @@ icon: fab fa-steam
 
 # systemctl.serivce
 
-> [!TIP]
-> systemctl
+::: tip
+systemctl
+:::
 
 ```shell
 

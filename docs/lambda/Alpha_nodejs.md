@@ -2,41 +2,39 @@
 icon: fab fa-steam
 ---
 
-# nodejs AlphaBeta
+# Alpha nodejs AlphaBeta
 
-> [!TIP]
-> About nodejs
 
-## registry
-npm config set registry https://registry.npm.taobao.org
-> C:\Users\Administrator
+## package manage
 
-npm config -g set registry https://registry.npm.taobao.org
-> D:\Portable\nodejs\etc\npmrc
+1. npm
+2. yarn
+3. pnpm (Star)
 
-## check
+## config pnpm
+
+### pnpm on windows
+
+```zsh
+# 在 .zshrc 中的代码段 set global path
+export PNPM_HOME="/d/Portable/nodejs"
+export PNPM_STORE_PATH="/d/Portable/nodejs"
+```
+
+
+## npm command
 npm config ls -l
 
 npm outdated
 
 
-## nodejs in action
+### pm2 static http server
 
-### export
-
-module.exports = app;
-exports.app = func;
-
-
-### net.Socket
-https://www.runoob.com/nodejs/nodejs-net-module.html
-
-
-### Headroom.js
-
-Give your pages some headroom. Hide your header until you need it. 
-https://wicky.nillia.ms/headroom.js/
-
-
-## jquery
-
+```yml
+apps:
+   - name : "http-server"
+     script : "serve"
+     env:
+       PM2_SERVE_PATH : '.'
+       PM2_SERVE_PORT : 9000
+```

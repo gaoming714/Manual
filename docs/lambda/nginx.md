@@ -4,10 +4,11 @@ icon: fab fa-steam
 
 # nginx
 
-> [!TIP]  
-> easy way to build a nginx connect others(reverse proxy) and automatically start
-> An open proxy forwarding requests from and to anywhere on the Internet
-> A reverse proxy talking requests from the Internet and forwarding them to servers in an interneal network. Those making requests connect to the proxy and may not be aware of the internal netwark.
+::: tip
+easy way to build a nginx connect others(reverse proxy) and automatically start
+An open proxy forwarding requests from and to anywhere on the Internet
+A reverse proxy talking requests from the Internet and forwarding them to servers in an interneal network. Those making requests connect to the proxy and may not be aware of the internal netwark.
+:::
 
 ## Install niginx
 
