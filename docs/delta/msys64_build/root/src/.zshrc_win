@@ -29,15 +29,23 @@ eval "$(fnm env --use-on-cd --shell zsh --fnm-dir ${PATH_node})"
 export PATH_go="/d/Portable/go/bin"
 export PATH="$PATH_go:$PATH"
 
-# Proxy functions
+# Proxy functions with tput for colorful output
 proxy() {
     export {http_proxy,https_proxy}="http://127.0.0.1:7890"
+    
+    # Set text color to green for proxy enabled
+    tput setaf 2  # Green color
     echo "🌐 Proxy is now enabled at http://127.0.0.1:7890 🚀"
+    tput sgr0  # Reset text formatting
 }
 
 noproxy() {
     unset {http_proxy,https_proxy}
+    
+    # Set text color to red for proxy disabled
+    tput setaf 1  # Red color
     echo "🚫 Proxy has been disabled ✨"
+    tput sgr0  # Reset text formatting
 }
 
 # Powerlevel10k theme
@@ -46,3 +54,4 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # Aliases
 alias @@='uv run'
+
