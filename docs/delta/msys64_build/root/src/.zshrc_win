@@ -1,0 +1,48 @@
+# Powerlevel10k instant prompt
+# Initialization code requiring console input (password prompts, confirmations) should go above this block
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Environment variables
+export TZ=Asia/Shanghai
+export LANG=en_US.UTF-8
+export HF_HOME="/d/HugFace"
+export HF_ENDPOINT="https://hf-mirror.com"
+export PNPM_HOME="/d/Portable/nodejs"
+export UV_CACHE_DIR="/d/Portable/Python/uv"
+
+# Paths
+# Nightly tools
+export PATH_Nightly="/d/Portable/Nightly"
+export PATH="$PATH_Nightly:$PATH"
+
+# Python tools
+export PATH_python="/d/Portable/Python"
+export PATH="$PATH_python:$PATH_python/Scripts:$PATH"
+
+# Node.js with fnm
+export PATH_node="/d/Portable/nodejs"
+eval "$(fnm env --use-on-cd --shell zsh --fnm-dir ${PATH_node})"
+
+# Golang tools
+export PATH_go="/d/Portable/go/bin"
+export PATH="$PATH_go:$PATH"
+
+# Proxy functions
+proxy() {
+    export {http_proxy,https_proxy}="http://127.0.0.1:7890"
+    echo "🌐 Proxy is now enabled at http://127.0.0.1:7890 🚀"
+}
+
+noproxy() {
+    unset {http_proxy,https_proxy}
+    echo "🚫 Proxy has been disabled ✨"
+}
+
+# Powerlevel10k theme
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Aliases
+alias @@='uv run'
