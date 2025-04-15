@@ -1,0 +1,5 @@
+
+User-agent:*
+Disallow:
+
+Sitemap: http://xinxi.jokerpy.top/sitemap.xml
